@@ -12,7 +12,7 @@ RUN npm i
 COPY src ./src
 COPY tsconfig.json ./tsconfig.json
 
-ENV NEQUI_QUEUE_NAME="https://sqs.us-east-1.amazonaws.com/177333342796/sqs-lambda-customer-service-create-ticket-comment-qa"
+ENV NEQUI_QUEUE_NAME="https://sqs.us-east-1.amazonaws.com/851560454673/sqs-lambda-customer-service-create-ticket-comment-qa"
 
 # Expose port 8080
 EXPOSE 8080
