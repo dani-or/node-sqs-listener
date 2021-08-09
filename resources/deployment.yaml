@@ -1,0 +1,28 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-sqs-listener-deployment
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+      ambiente: pruebas
+      lenguaje: node
+      project: node-sqs-listener
+  template:
+    metadata:
+      labels:
+        app: backend
+        ambiente: pruebas
+        lenguaje: node
+        project: node-sqs-listener
+    spec:
+      serviceAccountName: node-sqs-listener-service-account-name
+      containers:
+        - name: node-sqs-listener
+          image: 851560454673.dkr.ecr.us-east-1.amazonaws.com/node-sqs-listener:latest
+          ports:
+            - containerPort: 8080

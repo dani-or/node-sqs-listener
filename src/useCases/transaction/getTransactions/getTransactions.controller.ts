@@ -7,7 +7,6 @@ export class GetTransacionsController {
   async handle(): Promise<Array<Transaction>> {
     try {
       let p = await this.getTransactionsService.execute();
-      console.log("acá ya termino",p);
       return p;
     } catch (err) {
       console.log(err);
